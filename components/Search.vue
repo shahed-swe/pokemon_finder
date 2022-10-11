@@ -25,27 +25,28 @@ import { debounce } from 'lodash';
       </div>
     </div>
 
-<!-- for search result -->
+    <!-- for search result -->
     <div class="min-h-screen flex items-center" v-if="responsedata !== null">
       <div class="container mx-auto px-20">
-        <div class="border bg-white shadow-xl bg-opacity-25 rounded-lg p-6 text-gray-100 relative z-10" style="cursor: auto;">
+        <div class="border bg-white shadow-xl bg-opacity-25 rounded-lg p-6 text-gray-100 relative z-10"
+          style="cursor: auto;">
           <div class="flex flex-wrap items-center">
             <div class="flex w-full h-48 md:h-64 lg:h-72 relative">
-              <div class="w-full pr-4 relative">
+              <div class="w-8/12 pr-4 relative">
                 <img :src="responsedata.sprites.other.home.front_default"
-                  class="w-8/12 object-cover object-top rounded-lg bg-white">
+                  class="w-full h-full object-cover object-top rounded-lg bg-white">
               </div>
               <div class="w-4/12 h-full">
                 <div class="flex flex-col w-full h-full">
                   <div class="flex-1 pb-2">
                     <div class="w-full h-full relative">
-                      <img :src="responsedata.sprites.other.home.front_default"
+                      <img :src="responsedata.sprites.front_default"
                         class="absolute top-0 w-full h-full object-cover object-center rounded-lg bg-white">
                     </div>
                   </div>
                   <div class="flex-1 pt-2">
                     <div class="w-full h-full relative">
-                      <img :src="responsedata.sprites.other.home.front_default"
+                      <img :src="responsedata.sprites.back_default"
                         class="absolute top-0 w-full h-full object-cover object-bottom rounded-lg bg-white">
                     </div>
                   </div>
@@ -57,11 +58,13 @@ import { debounce } from 'lodash';
                 <h2 class="font-bold text-xl text-gray-900">{{responsedata.name}}</h2>
                 <div class=" m-0 flex flex-wrap text-center pt-4 mb-2">
                   <p class="m-0 text-xs leading-relaxed text-gray-500 mr-2">Abilities</p>
-                  <div class="mr-2 rounded-full px-3 py-1 text-xs bg-green-400 text-green-900" v-for="item in responsedata.abilities">{{item.ability.name}}</div>
+                  <div class="mr-2 rounded-full px-3 py-1 text-xs bg-green-400 text-green-900"
+                    v-for="item in responsedata.abilities">{{item.ability.name}}</div>
                 </div>
                 <div class=" m-0 flex flex-wrap text-center pt-4 mb-2">
                   <p class="m-0 text-xs leading-relaxed text-gray-500 mr-2">Types</p>
-                  <div class="mr-2 rounded-full px-3 py-1 text-xs bg-green-400 text-green-900" v-for="item in responsedata.abilities">{{item.ability.name}}</div>
+                  <div class="mr-2 rounded-full px-3 py-1 text-xs bg-green-400 text-green-900"
+                    v-for="item in responsedata.abilities">{{item.ability.name}}</div>
                 </div>
                 <p class="text-xs leading-relaxed text-gray-500">There are different Types of moves for each pokemon</p>
                 <ul class="text-xs mt-4 list-disc list-inside text-gray-500 leading-relaxed">
@@ -133,10 +136,9 @@ export default {
   background-color: red;
   color: white;
 }
+
 .container {
   margin-top: 3rem;
-  max-width: 70% !important;
+  max-width: 45% !important;
 }
-
-
 </style>
