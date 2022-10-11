@@ -23,6 +23,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/mixin.js',
+    // '~/plugins/persistedState.client.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -45,13 +46,5 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    extend(config, { isDev, isClient }) {
-
-      config.node = {
-        fs: 'empty'
-      }
-    },
-    transpile: [/echarts/, /zrender/]
-  }
+  build: {}
 }
